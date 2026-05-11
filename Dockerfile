@@ -1,8 +1,16 @@
+FROM eclipse-temurin:17-jdk-alpine AS build
+
+WORKDIR /app
+
+COPY . .
+
+RUN ./mvnw clean package -DskipTests
+
 FROM eclipse-temurin:17-jdk-alpine
 
 WORKDIR /app
 
-COPY target/AI-Assisted-Resume-Screening-1.0.0.jar app.jar
+COPY --from=build /app/target/*.jar app.jar
 
 EXPOSE 8080
 
