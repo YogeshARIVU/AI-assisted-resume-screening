@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>AI Resume Screening</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+            padding: 40px;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            max-width: 600px;
+            margin: auto;
+            border-radius: 10px;
+        }
+        h2 {
+            text-align: center;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        button {
+            background: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>AI Assisted Resume Screening</h2>
+
+    <form action="/upload" method="post" enctype="multipart/form-data">
+
+        <label>Upload Resume (PDF/DOCX)</label>
+        <input type="file" name="file" required />
+
+        <label>Job Description Skills (comma separated)</label>
+        <input type="text" name="jdSkills"
+               placeholder="Java, Spring Boot, SQL"
+               required />
+
+        <button type="submit">Analyze Resume</button>
+
+    </form>
+</div>
+
+</body>
+</html>

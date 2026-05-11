@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Ranking</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+            padding: 40px;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            max-width: 800px;
+            margin: auto;
+            border-radius: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Candidate Ranking</h2>
+
+    <table>
+        <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Skills</th>
+            <th>Score</th>
+        </tr>
+
+        <tr th:each="c, iterStat : ${candidates}">
+            <td th:text="${iterStat.count}"></td>
+            <td th:text="${c.name}"></td>
+            <td th:text="${c.skills}"></td>
+            <td th:text="${c.score}"></td>
+        </tr>
+
+    </table>
+
+    <a href="/">← Upload Another Resume</a>
+
+</div>
+
+</body>
+</html>

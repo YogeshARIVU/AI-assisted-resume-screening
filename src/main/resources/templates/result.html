@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Result</title>
+  <style>
+    body {
+        font-family: Arial;
+        background: #f4f4f4;
+        padding: 40px;
+    }
+    .container {
+        background: white;
+        padding: 30px;
+        max-width: 700px;
+        margin: auto;
+        border-radius: 10px;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+        text-align: center;
+    }
+    a {
+        display: inline-block;
+        margin-top: 20px;
+        text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <h2>AI Assisted Resume Screening Results</h2>
+
+  <p><b>Name:</b> <span th:text="${candidate.name}">John Doe</span></p>
+
+  <p><b>Skills:</b>
+    <span th:text="${candidate.skills}">Java, Spring Boot</span>
+  </p>
+
+  <p><b>Score:</b>
+    <span th:text="${candidate.score}">85</span>
+  </p>
+
+  <a href="/">← Upload Another Resume</a>
+
+</div>
+
+</body>
+</html>
